@@ -38,9 +38,17 @@ class App extends Component {
   }
 
   render() {
+
+    const newVact = this.cityList.filter((el)=>{
+      return el.country == "India"
+    })
     return (
       <div id="main">
-        {/* Do not remove the main div */}
+        <ol>
+          {newVact.map((fcity,index)=>{
+            return <li key={"location" + (index+1)}>{fcity.name}</li>
+          })}
+        </ol>
       </div>
     )
   }
